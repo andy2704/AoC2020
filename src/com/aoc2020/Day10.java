@@ -1,4 +1,4 @@
-package com.company;
+package com.aoc2020;
 
 import java.io.IOException;
 import java.nio.file.Files;
