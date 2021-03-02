@@ -381,12 +381,6 @@ public class Day12 {
         ship.getInput();
         ship.navigateWaypoint(ship.list);
         ship.manhattenDistance(ship.shipPositionN, ship.shipPositionE, ship.shipPositionS, ship.shipPositionW);
-        System.out.println("N= " + ship.shipPositionN);
-        System.out.println("E= " + ship.shipPositionE);
-        System.out.println("S= " + ship.shipPositionS);
-        System.out.println("W= " + ship.shipPositionW);
-
-
         System.out.println("answer part two= " + ship.distance);
     }
 }
