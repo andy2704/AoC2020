@@ -29,7 +29,7 @@ public class Day13 {
     public void getNextBusline() {
         Float[] busDepartTimes = new Float[buslines.size()];
         float buffer;
-        float minTime = buslines.stream().min(Float::compare).get();
+        float minTime =  buslines.stream().min(Float::compare).orElse((float) myDepart);
         for (int i = 0; i < buslines.size(); i++) {
             buffer = myDepart / buslines.get(i);
             busDepartTimes[i] = Math.round(buffer) * buslines.get(i) < myDepart ? (Math.round(buffer) + 1) * buslines.get(i) : Math.round(buffer) * buslines.get(i);
