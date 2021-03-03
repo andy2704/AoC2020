@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class Day13 {
 
     private final List<Float> buslines = new ArrayList<>();
-    private int myDepart, answerPartOne;
+    private float myDepart, answerPartOne;
 
     public void getMyDepart() throws FileNotFoundException {
         Scanner scanner = new Scanner(new FileReader("input.txt"));
@@ -29,11 +29,11 @@ public class Day13 {
     public void getNextBusline() {
         Float[] busDepartTimes = new Float[buslines.size()];
         float buffer;
-        float minTime =  buslines.stream().min(Float::compare).orElse((float) myDepart);
+        float minTime =  buslines.stream().min(Float::compare).orElse( myDepart);
         for (int i = 0; i < buslines.size(); i++) {
             buffer = myDepart / buslines.get(i);
             busDepartTimes[i] = Math.round(buffer) * buslines.get(i) < myDepart ? (Math.round(buffer) + 1) * buslines.get(i) : Math.round(buffer) * buslines.get(i);
-            answerPartOne = busDepartTimes[i] - myDepart < minTime ? (int) ((busDepartTimes[i] - myDepart) * buslines.get(i)) : answerPartOne;
+            answerPartOne = busDepartTimes[i] - myDepart < minTime ? ((busDepartTimes[i] - myDepart) * buslines.get(i)) : answerPartOne;
             minTime = Math.min(busDepartTimes[i] - myDepart, minTime);
         }
     }
@@ -43,6 +43,6 @@ public class Day13 {
         travel.getMyDepart();
         travel.getBuslines();
         travel.getNextBusline();
-        System.out.println("answer part one= " + travel.answerPartOne);
+        System.out.println("answer part one= " + (int) travel.answerPartOne);
     }
 }
