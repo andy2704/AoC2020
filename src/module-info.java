@@ -1,0 +1,2 @@
+module moduleAoC2020 {
+}
